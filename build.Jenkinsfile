@@ -4,10 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 
-                    '''
-                        build...
-                    '''
+                sh 'ls'
+                sh 'echo building...'
             }
         }
     }
