@@ -15,14 +15,6 @@ pipeline {
                     '''
                 }
             }
-            post {
-               always {
-                 sh '''
-                 docker image prune -f -a --filter "until=240h"
-                 '''
-               }
-
-            }
         }
     }
 }
