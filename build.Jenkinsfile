@@ -10,8 +10,8 @@ pipeline {
                     sh '''
                     docker login --username $USERNAME --password $PASSWORD
                     docker build -t roberta:latest .
-                    docker tag roberta:latest ${USERNAME}/roberta_cicd
-                    docker push ${USERNAME}/roberta_cicd
+                    docker tag roberta:latest niksam20/roberta-cicd:latest
+                    docker push niksam20/roberta-cicd:latest
                     '''
                 }
             }
