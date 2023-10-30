@@ -17,4 +17,12 @@ pipeline {
             }
         }
     }
+
+    stage('Trigger Deploy') {
+    steps {
+        build job: 'roberta-deploy', wait: false, parameters: [
+            string(name: 'ROBERTA_IMAGE_URL', value: "niksam20/roberta-cicd:latest")
+        ]
+        }
+    }
 }
