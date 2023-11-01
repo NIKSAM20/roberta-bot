@@ -24,7 +24,6 @@ pipeline {
 
             }
         }
-
         stage('Trigger Deploy') {
             steps {
                 build job: 'roberta-deploy', wait: false, parameters: [
