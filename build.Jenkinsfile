@@ -15,6 +15,14 @@ pipeline {
                     '''
                 }
             }
+            post {
+               always {
+                 sh '''
+                 docker image prune -f -a --filter "until=48h"
+                 '''
+               }
+
+            }
         }
 
         stage('Trigger Deploy') {
